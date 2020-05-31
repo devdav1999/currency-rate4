@@ -1,0 +1,17 @@
+.Bar{
+	position: relative;
+	background-color: yellow;
+	text-align:center;
+	justify-content: center;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	bottom: 0px;
+	max-height: 100%;
+	min-width: 100px;
+	margin-left: var(--page-spacing);
+	margin-right: var(--page-spacing);
+	font-size: 24px;
+	color: purple;
+	font-family: 'Righteous', cursive;
+	transition: background-color .9s;
+}
