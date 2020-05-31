@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-// import BarContainer from './components/BarContainer/BarContainer.js';
+import BarContainer from './components/BarContainer/BarContainer.js';
 // import Bar from './components/Bar/Bar.js';
 import Nav from './components/Nav/Nav.js';
 
@@ -45,7 +45,7 @@ function App() {
       addCurrency = {addCurrency}/>
       
       
-      <div className="BarContainer">
+      <BarContainer>
       {
         rates
         .filter(rate => mainCurrencies.includes(rate[0]))
@@ -57,7 +57,7 @@ function App() {
             </div>
         ))
         }
-      </div>
+      </BarContainer>
    </div>
    );
 }
