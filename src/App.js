@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import BarContainer from './components/BarContainer/BarContainer.js';
+import Bar from './componens/Bar/Bar.js';
+import Nav from './components/Nav/Nav.js';
 
 
 function App() {
