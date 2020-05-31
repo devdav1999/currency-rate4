@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import BarContainer from './components/BarContainer/BarContainer.js';
-import Bar from './componens/Bar/Bar.js';
+// import BarContainer from './components/BarContainer/BarContainer.js';
+// import Bar from './components/Bar/Bar.js';
 import Nav from './components/Nav/Nav.js';
 
 
@@ -38,25 +38,11 @@ function App() {
 
   return (
     <div>
-      <div className='TopNav'>
-      <h1>Currency Rates Today</h1>
-      <h5>Please click on bar to find out current rate for Euro</h5>
-      <div className='currencyNav'>
-      {
-        rates
-        .map(rate =>(
-          mainCurrencies.includes(rate[0]) ?
-            <button className='countrySelection' onClick={removeCurrency}>
-            {rate[0]}
-            </button>
-          :
-            <button className='countrySelection' onClick={addCurrency}>
-            {rate[0]}
-            </button>
-        ))
-        }
-      </div>
-      </div>
+      <Nav
+      rates = {rates}
+      mainCurrencies= {mainCurrencies}
+      removeCurrency = {removeCurrency}
+      addCurrency = {addCurrency}/>
       
       
       <div className="BarContainer">
