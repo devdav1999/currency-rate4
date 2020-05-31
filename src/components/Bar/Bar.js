@@ -4,9 +4,9 @@ import './Bar.css'
 
 function Bar(props) {
   return (
+    <div>
     {
-      rates
-      .filter(rate => mainCurrencies.includes(rate[0]))
+      props.rates.filter(rate => props.mainCurrencies.includes(rate[0]))
       .map(rate =>(
           <div className='Bar' style={{height: (1/rate[1] * 100) + '%'}}>
           {rate[0]}
@@ -15,6 +15,7 @@ function Bar(props) {
           </div>
       ))
       }
+    </div>
   );
 }
 
