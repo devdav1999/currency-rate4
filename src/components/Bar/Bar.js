@@ -4,7 +4,7 @@ import './Bar.css'
 
 function Bar(props) {
   return (
-    <div>
+    <div className='BarContainer'>
     {
       props.rates.filter(rate => props.mainCurrencies.includes(rate[0]))
       .map(rate =>(
