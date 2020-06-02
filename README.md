@@ -6,7 +6,7 @@ It is a bar graph with of the currency rate from data fetched from the exchange 
 
 API: https://api.exchangeratesapi.io/latest
 
-Clicking on a currency abbreviation will populate a bar inside the bar container along with the default bars already inside. Clicking on a an abbreviation existing will cause the bar to disappear.
+Clicking on a currency abbreviation will populate a bar inside the bar container along with the default bars already inside. Also clicking on a an abbreviation existing will cause the bar to disappear.
 
 
 
