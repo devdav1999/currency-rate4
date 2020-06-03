@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import BarContainer from './components/BarContainer/BarContainer.js';
 import Bar from './components/Bar/Bar.js';
 import Nav from './components/Nav/Nav.js';
+import Dropdown from './components/Dropdown/Dropdown.js';
 
 
 function App() {
   const [mainCurrencies, setMainCurrencies] = useState(["HKD", "USD", "AUD", "GBP", "CAD"]);
   const [rates, setRates] = useState([]);
+  const [base, setBase] = useState(["EUR"]);
   
 
   function doFetch() {
-    const url = "https://api.exchangeratesapi.io/latest";
+    const url = "https://api.exchangeratesapi.io/latest?base=" + base;
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -34,7 +35,16 @@ function App() {
     setMainCurrencies(mainCurrencies.filter(cur => cur !== currency));
   }
 
-  useEffect(doFetch, []);
+  
+  function testDrop(ev){
+    console.log('testing dropdown');
+    const value = ev.target.value;
+    setBase(value);
+    console.log(base);
+  }
+
+  
+  useEffect(doFetch, [base]);
 
   return (
     <div>
@@ -42,15 +52,19 @@ function App() {
       rates = {rates}
       mainCurrencies= {mainCurrencies}
       removeCurrency = {removeCurrency}
-      addCurrency = {addCurrency}/>
+      addCurrency = {addCurrency}
+      />
+
+      <Dropdown
+      test = {testDrop}
+      rates= {rates}/>
+
       
-      
-      <BarContainer>
       <Bar
       rates ={rates}
       mainCurrencies ={mainCurrencies}
       />
-      </BarContainer>
+
    </div>
    );
 }

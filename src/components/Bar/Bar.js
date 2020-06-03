@@ -11,7 +11,7 @@ function Bar(props) {
           <div className='Bar' style={{height: (1/rate[1] * 100) + '%'}}>
           {rate[0]}
           <br></br>
-          {rate[1]}
+          {rate[1].toFixed(3)}
           </div>
       ))
       }
