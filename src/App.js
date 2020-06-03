@@ -36,7 +36,7 @@ function App() {
   }
 
   
-  function testDrop(ev){
+  function currencyDrop(ev){
     console.log('testing dropdown');
     const value = ev.target.value;
     setBase(value);
@@ -48,6 +48,7 @@ function App() {
 
   return (
     <div>
+      
       <Nav
       rates = {rates}
       mainCurrencies= {mainCurrencies}
@@ -56,7 +57,7 @@ function App() {
       />
 
       <Dropdown
-      test = {testDrop}
+      test = {currencyDrop}
       rates= {rates}/>
 
       
